@@ -1,0 +1,27 @@
+/**app.wxss**/
+
+page {
+  background-color: #fbf9fe;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.normal_input {
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+}
+
+.normal_label_title {
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
