@@ -38,7 +38,7 @@ function openDataBase() {
     };
 }
 
-function addSingleData(incident, callback) {
+function addSingleData(incident, storeName, callback) {
     if (app.globalData.db == null) {
         openDataBase()
     }
@@ -59,18 +59,18 @@ function addSingleData(incident, callback) {
             outOfDate: incident.outOfDate
         }];
 
-        var transaction = app.globalData.db.transaction(['todoList'], 'readwrite');
+        var transaction = app.globalData.db.transaction([storeName], 'readwrite');
 
         transaction.oncomplete = function () {
 
         };
 
         transaction.onerror = function () {
-            console.log('transaction error')
-            callback(false)
+            console.log('transaction error');
+            callback(false);
         };
 
-        var objectStore = transaction.objectStore('todoList');
+        var objectStore = transaction.objectStore(storeName);
 
         var objectStoreRequest = objectStore.add(newItem[0]);
 
@@ -81,7 +81,35 @@ function addSingleData(incident, callback) {
     }
 }
 
+function getAllStoreData(storeName, callback) {
+    if (app.globalData.db == null) {
+        openDataBase()
+    }
+
+    if (app.globalData.db == null) {
+        console.log('load db error')
+        callback(false)
+    } else {
+        var transaction = app.globalData.db.transaction([storeName]);//默认是readOnly
+
+        transaction.oncomplete = function () {
+
+        }
+
+        transaction.onerror = function () {
+            console.log('transaction error')
+            callback(false)
+        }
+
+        var objectStore = transaction.objectStore(storeName)
+        objectStore.getAll().onsuccess = function (event) {
+            console.log(event.target.result)
+        }
+    }
+}
+
 module.exports = {
     openDataBase: openDataBase,
-    addSingleData: addSingleData
+    addSingleData: addSingleData,
+    getAllStoreData: getAllStoreData
 }

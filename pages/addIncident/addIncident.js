@@ -95,7 +95,7 @@ Page({
         Incident.targetTimestamp = timeUtil.string2Timestamp(this.data.targetDate, this.data.targetTime);
 
         console.log(Incident)
-        dbUtil.addSingleData(Incident, callback)
+        dbUtil.addSingleData(Incident, 'todoList',callback)
     },
 
     onLoad: function () {
