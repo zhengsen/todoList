@@ -1,0 +1,20 @@
+.list {
+    
+}
+
+.footer {
+  font-size: 24rpx;
+  padding: 48rpx;
+  color: #ccc;
+  text-align: center;
+}
+
+.footer.text {
+  vertical-align: middle;
+}
+
+.footer.image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}

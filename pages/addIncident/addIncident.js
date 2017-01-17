@@ -10,7 +10,7 @@ Page({
         inputDescribe: '',
         targetDate: '',
         targetTime: '',
-        imgPath: 'wxfile://tmp_1237414422o6zAJs5brI-52Dv71TI9NAX-vT1Y1484099927860.jpg',
+        imgPath: '/image/add.png',
         outOfDate: false
     },
     inputTitle: function (event) {

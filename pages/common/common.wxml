@@ -1,0 +1,17 @@
+<template name='incident-list'>
+  <scroll-view scroll-y='true' class='list' bindscrolltolower="handleLoadMore">
+    <view class='footer'>
+      <view wx:if='{{hasMore}}'>
+        <image src="/image/loading.gif" mode="aspectFill" />
+        <text>加载中...</text>
+      </view>
+      <view wx:else>
+        <text>全部加载完毕</text>
+      </view>
+    </view>
+  </scroll-view>
+</template>
+
+<template name='todo-item'>
+
+</template>
