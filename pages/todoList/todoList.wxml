@@ -1,0 +1,4 @@
+<import src="../common/common" />
+<view class='page'>
+  <template is="incident-list" data="{{incidents,isLoading,hasMore}}" />
+</view>

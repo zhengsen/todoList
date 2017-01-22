@@ -84,18 +84,18 @@ Page({
         }
         console.log(id)
 
-        var Incident = new Object();
-        Incident.id = id;
-        Incident.title = this.data.inputTitle;
-        Incident.describe = this.data.inputDescribe;
-        Incident.notify = this.data.notify;
-        Incident.imgPath = this.data.imgPath;
-        Incident.targetDate = this.data.targetDate;
-        Incident.targetTime = this.data.targetTime;
-        Incident.targetTimestamp = timeUtil.string2Timestamp(this.data.targetDate, this.data.targetTime);
+        var incident = new Object();
+        incident.id = id;
+        incident.title = this.data.inputTitle;
+        incident.describe = this.data.inputDescribe;
+        incident.notify = this.data.notify;
+        incident.imgPath = this.data.imgPath;
+        incident.targetDate = this.data.targetDate;
+        incident.targetTime = this.data.targetTime;
+        incident.targetTimestamp = timeUtil.string2Timestamp(this.data.targetDate, this.data.targetTime);
 
-        console.log(Incident)
-        dbUtil.addSingleData(Incident, 'todoList',callback)
+        console.log(incident)
+        dbUtil.addSingleData(incident, 'todoList',callback)
     },
 
     onLoad: function () {

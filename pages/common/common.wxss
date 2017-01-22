@@ -1,6 +1,11 @@
 .list {
-    
 }
+
+.item {
+  display: flex;
+  margin: 20rpx;
+}
+
 
 .footer {
   font-size: 24rpx;

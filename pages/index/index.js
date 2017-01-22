@@ -9,8 +9,8 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../homepage/homepage'
+    wx.switchTab({
+      url: '../todoList/todoList'
     })
   },
   addNewIncident: function(){

@@ -88,7 +88,7 @@ function getAllStoreData(storeName, callback) {
 
     if (app.globalData.db == null) {
         console.log('load db error')
-        callback(false)
+        callback(false, null)
     } else {
         var transaction = app.globalData.db.transaction([storeName]);//默认是readOnly
 
@@ -98,12 +98,13 @@ function getAllStoreData(storeName, callback) {
 
         transaction.onerror = function () {
             console.log('transaction error')
-            callback(false)
+            callback(false, null)
         }
 
         var objectStore = transaction.objectStore(storeName)
         objectStore.getAll().onsuccess = function (event) {
             console.log(event.target.result)
+            callback(true, event.target.result)
         }
     }
 }

@@ -3,11 +3,31 @@ var app = getApp()
 
 Page({
     data: {
+        isLoading: true,
+        hasMore: true,
+        pageSize: 0,
+        pageNum: 10,
+        incidents: []
     },
     onLoad: function (options) {
         // 生命周期函数--监听页面加载
         console.log('....')
-        dbUtil.getAllStoreData('todoList', new function callback(){})
+        var that = this;
+        dbUtil.getAllStoreData('todoList', function callback(isSuccess, arrays) {
+            if (isSuccess) {
+                that.setData({
+                    incidents: arrays,
+                    isLoading: false,
+                    hasMore: false
+                })
+            } else {
+                wx.showToast({
+                    title: '获取数据失败',
+                    icon: 'success',
+                    duration: 2000
+                })
+            }
+        })
     },
     onReady: function () {
         // 生命周期函数--监听页面初次渲染完成

@@ -1,5 +1,6 @@
 <template name='incident-list'>
   <scroll-view scroll-y='true' class='list' bindscrolltolower="handleLoadMore">
+    <template is="todo-item" data="{{item}}" wx:for="{{incidents}}" wx:key="{{item.id}}" />
     <view class='footer'>
       <view wx:if='{{hasMore}}'>
         <image src="/image/loading.gif" mode="aspectFill" />
@@ -10,8 +11,11 @@
       </view>
     </view>
   </scroll-view>
+  <loading hidden="{{!loading}}">加载中...</loading>
 </template>
-
 <template name='todo-item'>
-
+  <view class="item">
+    <text>{{item.title}}</text>
+    <text>{{item.describe}}</text>
+  </view>
 </template>
