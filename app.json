@@ -33,8 +33,8 @@
       {
         "pagePath": "pages/logs/logs",
         "text": "过期的",
-        "iconPath": "/image/icon_past.png",
-        "selectedIconPath": "/image/icon_past_p.png"
+        "iconPath": "image/icon_past.png",
+        "selectedIconPath": "image/icon_past_p.png"
       }
     ]
   },

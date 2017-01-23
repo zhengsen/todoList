@@ -50,7 +50,7 @@ function addSingleData(incident, storeName, callback) {
         var newItem = [{
             id: incident.id,
             title: incident.title,
-            describe: incident.descirbe,
+            describe: incident.describe,
             notify: incident.notify,
             targetDate: incident.targetDate,
             targetTime: incident.targetTime,

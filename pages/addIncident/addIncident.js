@@ -10,7 +10,7 @@ Page({
         inputDescribe: '',
         targetDate: '',
         targetTime: '',
-        imgPath: '/image/add.png',
+        imgUrl: '/image/add.png',
         outOfDate: false
     },
     inputTitle: function (event) {
@@ -52,7 +52,7 @@ Page({
             success: function (res) {
                 // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
                 that.setData({
-                    imgPath: res.tempFilePaths
+                    imgUrl: res.tempFilePaths
                 })
 
                 console.log(res.tempFilePaths)
@@ -89,7 +89,7 @@ Page({
         incident.title = this.data.inputTitle;
         incident.describe = this.data.inputDescribe;
         incident.notify = this.data.notify;
-        incident.imgPath = this.data.imgPath;
+        incident.imgUrl = this.data.imgUrl;
         incident.targetDate = this.data.targetDate;
         incident.targetTime = this.data.targetTime;
         incident.targetTimestamp = timeUtil.string2Timestamp(this.data.targetDate, this.data.targetTime);

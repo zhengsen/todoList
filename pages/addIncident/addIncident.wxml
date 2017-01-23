@@ -13,7 +13,7 @@
     </picker>
   </view>
   <view class="normal_input">
-    <textarea bindblur="inputDescribe" placeholder="请输入事件描述" />
+    <textarea bindinput="inputDescribe" placeholder="请输入事件描述" />
   </view>
   <view style="margin-top: 20rpx;padding: 20rpx 30rpx;">
     <image bindtap="insertImg" class="img" src="{{imgPath}}" mode="aspectFill"></image>

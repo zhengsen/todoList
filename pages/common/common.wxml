@@ -14,7 +14,7 @@
   <loading hidden="{{!loading}}">加载中...</loading>
 </template>
 <template name='todo-item'>
-  <view class="item">
+  <view class="normal_item">
     <text>{{item.title}}</text>
     <text>{{item.describe}}</text>
   </view>

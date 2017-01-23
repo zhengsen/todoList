@@ -25,3 +25,9 @@ page {
   padding-left: 30rpx;
   padding-right: 30rpx;
 }
+
+.normal_item {
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+}
